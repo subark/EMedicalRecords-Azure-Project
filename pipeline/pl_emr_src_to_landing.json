@@ -55,7 +55,8 @@
 						"value": "@activity('Lkup_EMR_config').output.value",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
+					"batchCount": 5,
 					"activities": [
 						{
 							"name": "If file exists",
