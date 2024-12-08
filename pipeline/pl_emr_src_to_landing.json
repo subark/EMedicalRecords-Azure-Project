@@ -52,7 +52,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lkup_EMR_config').output.firstRow",
+						"value": "@activity('Lkup_EMR_config').output.value",
 						"type": "Expression"
 					},
 					"isSequential": false,
