@@ -98,7 +98,7 @@
 							}
 						},
 						{
-							"name": "Archive file",
+							"name": "send_to_archive",
 							"type": "IfCondition",
 							"dependsOn": [
 								{
@@ -201,7 +201,7 @@
 							"type": "IfCondition",
 							"dependsOn": [
 								{
-									"activity": "Archive file",
+									"activity": "send_to_archive",
 									"dependencyConditions": [
 										"Succeeded"
 									]
