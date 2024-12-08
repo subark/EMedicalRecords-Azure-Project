@@ -35,7 +35,7 @@
 							"file_name": "load_config.csv"
 						}
 					},
-					"firstRowOnly": true
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -52,10 +52,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lkup_EMR_config').output.childItems",
+						"value": "@activity('Lkup_EMR_config').output.firstRow",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "If file exists",
