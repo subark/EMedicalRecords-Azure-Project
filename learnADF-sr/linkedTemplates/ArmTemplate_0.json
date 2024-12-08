@@ -112,13 +112,13 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
+					"container": {
+						"type": "string"
+					},
 					"file_path": {
 						"type": "string"
 					},
 					"file_name": {
-						"type": "string"
-					},
-					"container": {
 						"type": "string"
 					}
 				},
@@ -310,11 +310,12 @@
 								"referenceName": "generic_adls_flat_file_ds",
 								"type": "DatasetReference",
 								"parameters": {
+									"container": "configs",
 									"file_path": "emr",
-									"file_name": "load_config.csv",
-									"container": "configs"
+									"file_name": "load_config.csv"
 								}
-							}
+							},
+							"firstRowOnly": true
 						}
 					},
 					{
@@ -378,7 +379,7 @@
 									}
 								},
 								{
-									"name": "Archive file",
+									"name": "send_to_archive",
 									"type": "IfCondition",
 									"dependsOn": [
 										{
@@ -391,7 +392,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"expression": {
-											"value": "@equals(activity('If file exists').output,true )",
+											"value": "@equals(activity('If file exists').output,'True' )",
 											"type": "Expression"
 										},
 										"ifTrueActivities": [
@@ -481,7 +482,7 @@
 									"type": "IfCondition",
 									"dependsOn": [
 										{
-											"activity": "Archive file",
+											"activity": "send_to_archive",
 											"dependencyConditions": [
 												"Succeeded"
 											]
