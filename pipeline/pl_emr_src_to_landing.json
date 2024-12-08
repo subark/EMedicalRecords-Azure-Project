@@ -67,14 +67,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [
-								{
-									"name": "targetpath"
-								},
-								{
-									"name": "tablename"
-								}
-							],
+							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
 									"referenceName": "generic_adls_parquet_ds",
