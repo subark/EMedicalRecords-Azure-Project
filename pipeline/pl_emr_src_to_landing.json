@@ -50,6 +50,11 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('Lkup_EMR_config').output",
+						"type": "Expression"
+					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "If file exists",
@@ -199,7 +204,7 @@
 							}
 						},
 						{
-							"name": "Insert_Logs_Inc_load",
+							"name": "load",
 							"type": "IfCondition",
 							"dependsOn": [
 								{
