@@ -269,7 +269,24 @@
 												"queryTimeout": "02:00:00",
 												"partitionOption": "None"
 											},
-											"enableStaging": false
+											"sink": {
+												"type": "ParquetSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "ParquetWriteSettings"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
 										},
 										"inputs": [
 											{
@@ -285,6 +302,23 @@
 														"type": "Expression"
 													},
 													"table_name": {
+														"value": "@split(item().tablename,'.')[1]",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "generic_adls_parquet_ds",
+												"type": "DatasetReference",
+												"parameters": {
+													"container": "bronze",
+													"file_path": {
+														"value": "@split(item().tablename,'.')[0]",
+														"type": "Expression"
+													},
+													"file_name": {
 														"value": "@split(item().tablename,'.')[1]",
 														"type": "Expression"
 													}
@@ -353,7 +387,24 @@
 												"queryTimeout": "02:00:00",
 												"partitionOption": "None"
 											},
-											"enableStaging": false
+											"sink": {
+												"type": "ParquetSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "ParquetWriteSettings"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
 										},
 										"inputs": [
 											{
@@ -369,6 +420,23 @@
 														"type": "Expression"
 													},
 													"table_name": {
+														"value": "@split(item().tablename,'.')[1]",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "generic_adls_parquet_ds",
+												"type": "DatasetReference",
+												"parameters": {
+													"container": "bronze",
+													"file_path": {
+														"value": "@split(item().tablename,'.')[0]",
+														"type": "Expression"
+													},
+													"file_name": {
 														"value": "@split(item().tablename,'.')[1]",
 														"type": "Expression"
 													}
