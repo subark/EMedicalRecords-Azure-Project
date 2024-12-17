@@ -35,6 +35,10 @@
 			"type": "string",
 			"defaultValue": "https://ttadlsdevsr1.dfs.core.windows.net/"
 		},
+		"tt_hc_keyvault_ls_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://sr-kv.vault.azure.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -82,6 +86,9 @@
 					},
 					"hospitaladls_ls_properties_typeProperties_url": {
 						"value": "[parameters('hospitaladls_ls_properties_typeProperties_url')]"
+					},
+					"tt_hc_keyvault_ls_properties_typeProperties_baseUrl": {
+						"value": "[parameters('tt_hc_keyvault_ls_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},

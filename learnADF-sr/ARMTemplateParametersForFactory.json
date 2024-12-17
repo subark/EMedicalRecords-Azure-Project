@@ -25,6 +25,9 @@
 		},
 		"hospitaladls_ls_properties_typeProperties_url": {
 			"value": "https://ttadlsdevsr1.dfs.core.windows.net/"
+		},
+		"tt_hc_keyvault_ls_properties_typeProperties_baseUrl": {
+			"value": "https://sr-kv.vault.azure.net/"
 		}
 	}
 }
